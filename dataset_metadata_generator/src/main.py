@@ -7,7 +7,7 @@ import os
 import re
 
 import boto3
-from botocore.exceptions import ClientError
+import botocore
 import requests
 import yaml
 
@@ -26,9 +26,9 @@ try:
     bucket = s3.create_bucket(
         Bucket=os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')),
         CreateBucketConfiguration=location)
-except ClientError as e:
-    if e.response['Error']['Code'] == 'BucketAlreadyExists':
-        bucket = s3.Bucket(os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')))
+except s3.meta.client.exceptions.BucketAlreadyExists as err:
+    print(f"Bucket {err.response['Error']['BucketName']} already exists!")
+    bucket = s3.Bucket(os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')))
 
 
 
