@@ -7,6 +7,7 @@ import os
 import re
 
 import boto3
+from botocore.exceptions import BucketAlreadyExists
 import requests
 import yaml
 
@@ -20,11 +21,14 @@ DATASET_METADATA_FILENAME = f"{os.environ.get('STAGE')}-{os.environ.get('DATASET
 STAC_API_URL = config.get('STAC_API_URL', None)
 
 s3 = boto3.resource("s3")
-bucket = s3.create_bucket(
-    Bucket=os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')),
-    CreateBucketConfiguration={
-        'LocationConstraint': os.environ.get('AWS_REGION', 'us-east-1')
-    })
+location = dict(LocationConstraint=os.environ.get('AWS_REGION', config.get('AWS_REGION')))
+try:
+    bucket = s3.create_bucket(
+        Bucket=os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')),
+        CreateBucketConfiguration=location)
+except BucketAlreadyExists as e:
+    bucket = s3.Bucket(os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')))
+
 
 
 # Can test this with python -m dataset_metadata_generator.src.main | jq .

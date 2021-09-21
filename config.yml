@@ -4,3 +4,4 @@ DATASETS:
 - MOD13A1.006.json
 SITES:
 - example
+AWS_REGION: us-west-2
