@@ -18,6 +18,8 @@ SITES_INPUT_FILEPATH = os.path.join(BASE_PATH, "sites")
 
 SITES_OUTPUT_FILENAME = f"{os.environ.get('STAGE', 'local')}-site-metadata.json"
 
+# region for bucket creation
+location = dict(LocationConstraint=os.environ.get('AWS_REGION', config.get('AWS_REGION')))
 
 class Site(BaseModel):
 
@@ -46,7 +48,12 @@ def create_sites_json():
     sites = _gather_data(dirpath=SITES_INPUT_FILEPATH, visible_sites=config['SITES'])
 
     s3 = boto3.resource("s3")
-    bucket = s3.create_bucket(Bucket=os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')))
+    try:
+        bucket = s3.Bucket(os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')))
+    except Exception as e:
+        bucket = s3.create_bucket(
+            Bucket=os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')),
+            CreateBucketConfiguration=location)
     bucket.put_object(
         Body=json.dumps(sites), Key=SITES_OUTPUT_FILENAME, ContentType="application/json",
     )
