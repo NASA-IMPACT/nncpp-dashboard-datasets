@@ -21,14 +21,14 @@ DATASET_METADATA_FILENAME = f"{os.environ.get('STAGE')}-{os.environ.get('DATASET
 STAC_API_URL = config.get('STAC_API_URL', None)
 
 s3 = boto3.resource("s3")
-location = dict(LocationConstraint=os.environ.get('AWS_REGION', config.get('AWS_REGION')))
 try:
+    bucket = s3.Bucket(os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')))
+except:
+    location = dict(LocationConstraint=os.environ.get('AWS_REGION', config.get('AWS_REGION')))
     bucket = s3.create_bucket(
         Bucket=os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')),
         CreateBucketConfiguration=location)
-except s3.meta.client.exceptions.BucketAlreadyExists as err:
-    print(f"Bucket {err.response['Error']['BucketName']} already exists!")
-    bucket = s3.Bucket(os.environ.get("DATA_BUCKET_NAME", config.get('BUCKET')))
+
 
 
 
