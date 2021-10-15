@@ -1,0 +1,39 @@
+{
+  "id": "MOD13Q1_COGv1_EVI_16D",
+  "name": "EVI 16 Day [MOD13Q1]",
+  "type": "raster-timeseries",
+  "time_unit": "day",
+  "is_periodic": false,
+  "s3_location": "mosaics/MOD13Q1_COG___001",
+  "s3_bucket": "nncpp-dev-protected",
+  "swatch": {
+      "color": "#189C54",
+      "name": "Dark Green"
+  },
+  "source": {
+      "type": "raster",
+      "tiles": [
+          "{titiler_server_url}/mosaicjson/tiles/{z}/{x}/{y}@1x?url=s3://nncpp-dev-protected/mosaics/MOD13Q1_COG___001/{date}.json&bidx=1&expression=B3%2F10000&resampling_method=nearest&rescale=-.2%2C1&return_mask=true&colormap_name=cividis"
+      ]
+  },
+  "legend": {
+      "type": "gradient",
+      "min": "-0.2",
+      "max": "1",
+      "stops": [
+        "#00224e",
+        "#013271",
+        "#2f426d",
+        "#48526c",
+        "#5e636f",
+        "#727374",
+        "#878478",
+        "#9d9576",
+        "#b6a96f",
+        "#cebc63",
+        "#e7d150",
+        "#fee838"
+      ]
+  },
+  "info": "This is for testing"
+}
