@@ -1,6 +1,6 @@
 {
   "id": "OR_ABI_FDCF_Power",
-  "name": "NOAA Sample ABI L2+ Fire-Hot Spot Characterization: Fire Radiative Power",
+  "name": "NOAA Sample ABI L2+ Fire-Hot Spot Characterization: Fire Radiative Power (MW)",
   "type": "raster",
   "time_unit": "day",
   "is_periodic": false,
@@ -26,5 +26,5 @@
         "#5e4fa2"
       ]
   },
-  "info": "This is for testing"
+  "info": "Fire Radiative Power MW"
 }
