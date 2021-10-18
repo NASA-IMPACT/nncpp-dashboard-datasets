@@ -11,13 +11,13 @@
   "source": {
       "type": "raster",
       "tiles": [
-          "{titiler_server_url}/cog/tiles/{z}/{x}/{y}@1x?url=s3%3A%2F%2Fcmr-zarr-conversions%2FCOG%2F19%2FOR_ABI-L2-FDCF-M6_G16_s20212701900206_e20212701909514_c20212701910093-Power.tif&bidx=bidx%3D1&nodata=-9&resampling_method=nearest&rescale=0%2C200000&return_mask=true&colormap_name=spectral"
+          "{titiler_server_url}/cog/tiles/{z}/{x}/{y}@1x?url=s3%3A%2F%2Fcmr-zarr-conversions%2FCOG%2F19%2FOR_ABI-L2-FDCF-M6_G16_s20212701900206_e20212701909514_c20212701910093-Power.tif&bidx=bidx%3D1&nodata=-9&resampling_method=nearest&rescale=0%2C1850&return_mask=true&colormap_name=spectral"
       ]
   },
   "legend": {
       "type": "gradient",
       "min": "0",
-      "max": "200000",
+      "max": "1850",
       "stops": [
         "#9e0142",
         "#f88d52",
