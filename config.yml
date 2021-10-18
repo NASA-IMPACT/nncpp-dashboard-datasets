@@ -7,3 +7,4 @@ DATASETS:
 - OR_ABI_FDCF_Power.json
 SITES:
 - example
+- noaa_example_fire_power
