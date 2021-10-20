@@ -11,6 +11,8 @@ The `datasets` directory contains a directory for the available datasets. Each d
 
 Each dataset json must be included in the `DATASETS` array in [config.yml](config.yml). 
 
+>See [docs/prepare-dataset](docs/prepare-dataset.ipynb) for more information about configuring the dataset and generating the dataset json file.
+
 ### Sites
 
 The `sites` directory contains a directory for each site. Within each site directory, there are two files:
