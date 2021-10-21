@@ -1,0 +1,22 @@
+name: geo-datasets
+
+channels:
+  - conda-forge
+
+dependencies:
+  - gdal
+  - boto3
+  - python=3.9
+  - jupyterlab
+  - jupyterlab-git
+  - matplotlib
+  - geopandas
+  - geojson
+  - geopy
+  - geojson
+  - rasterio
+  - folium
+  - pip
+  - rio-tiler
+  - cogeo-mosaic
+  - supermercado
