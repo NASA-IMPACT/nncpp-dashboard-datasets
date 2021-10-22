@@ -6,6 +6,7 @@ DATASETS:
 - MOD13Q1_COGv1_EVI_16D.json
 - OR_ABI_FDCF_Power.json
 - OR_ABI_FDCF_Temp.json
+- OR_ABI_FDCF_DQF.json
 SITES:
 - example
 - noaa_example_fire

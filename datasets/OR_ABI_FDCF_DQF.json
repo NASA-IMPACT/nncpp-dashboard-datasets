@@ -1,0 +1,27 @@
+{
+  "id": "OR_ABI_FDCF_DQF",
+  "name": "TEST: NOAA Sample ABI L2+ Fire-Hot Spot Characterization: Data Quality",
+  "type": "raster",
+  "time_unit": "day",
+  "is_periodic": false,
+  "swatch": {
+      "color": "#189C54",
+      "name": "Dark Green"
+  },
+  "source": {
+      "type": "raster",
+      "tiles": [
+          "{titiler_server_url}/cog/tiles/{z}/{x}/{y}@1x?url=s3%3A%2F%2Fnncpp-dev-protected%2FNOAA_TEMP%2FOR_ABI-L2-FDCF-M3_G17_s20182390000369_e20182390011136_c20182390011221-DQF-EPSG.tif&bidx=1&nodata=-1&resampling_method=nearest&rescale=0%2C5&return_mask=true"
+      ]
+  },
+  "legend": {
+      "type": "gradient",
+      "min": "1",
+      "max": "5",
+      "stops": [
+        "#000000",
+        "#ffffff"
+      ]
+  },
+  "info": "TEST DQ bits as int"
+}

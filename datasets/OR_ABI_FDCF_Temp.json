@@ -1,6 +1,6 @@
 {
   "id": "OR_ABI_FDCF_Temp",
-  "name": "NOAA Sample ABI L2+ Fire-Hot Spot Characterization: Fire Temperature (K)",
+  "name": "TEST: NOAA Sample ABI L2+ Fire-Hot Spot Characterization: Fire Temperature (K)",
   "type": "raster",
   "time_unit": "day",
   "is_periodic": false,
@@ -11,13 +11,13 @@
   "source": {
       "type": "raster",
       "tiles": [
-          "{titiler_server_url}/cog/tiles/{z}/{x}/{y}@1x?url=s3%3A%2F%2Fcmr-zarr-conversions%2FCOG%2F19%2FOR_ABI-L2-FDCF-M6_G16_s20212701900206_e20212701909514_c20212701910093-Temp.tif&bidx=bidx%3D1&nodata=65535&resampling_method=nearest&rescale=400%2C1880&return_mask=true&colormap_name=afmhot"
+          "{titiler_server_url}/cog/tiles/{z}/{x}/{y}@1x?url=s3%3A%2F%2Fnncpp-dev-protected%2FNOAA_TEMP%2FOR_ABI-L2-FDCF-M3_G17_s20182390000369_e20182390011136_c20182390011221-Temp-EPSG.tif&bidx=bidx%3D1&nodata=-1&resampling_method=nearest&rescale=204%2C27144&return_mask=true&colormap_name=afmhot"
       ]
   },
   "legend": {
       "type": "gradient",
-      "min": "0",
-      "max": "1850",
+      "min": "204",
+      "max": "27144",
       "stops": [
         "#000000",
         "#800000",
@@ -26,5 +26,5 @@
         "#ffffff"
       ]
   },
-  "info": "Fire Temp K"
+  "info": "TEST Fire Temp K"
 }
