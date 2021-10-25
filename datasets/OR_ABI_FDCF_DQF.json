@@ -1,6 +1,6 @@
 {
   "id": "OR_ABI_FDCF_DQF",
-  "name": "TEST: NOAA Sample ABI L2+ Fire-Hot Spot Characterization: Data Quality",
+  "name": "EPSG 4326: NOAA Sample ABI L2+ Fire-Hot Spot Characterization: Data Quality",
   "type": "raster",
   "time_unit": "day",
   "is_periodic": false,
