@@ -1,0 +1,30 @@
+{
+  "id": "OR_ABI_FDCF_Temp_NOAA",
+  "name": "NOAA Temp (EPSG 4626): NOAA Sample ABI L2+ Fire-Hot Spot Characterization: Fire Temperature (K)",
+  "type": "raster",
+  "time_unit": "day",
+  "is_periodic": false,
+  "swatch": {
+      "color": "#189C54",
+      "name": "Dark Green"
+  },
+  "source": {
+      "type": "raster",
+      "tiles": [
+          "{titiler_server_url}/cog/tiles/{z}/{x}/{y}@1x?url=s3%3A%2F%2Fcmr-zarr-conversions%2FCOG%2FABI-L2-FDCF%2F2021%2F300%2F10%2FOR_ABI-L2-FDCF-M6_G16_s20213001050209_e20213001059517_c20213001100075-Temp-EPSG.tif&bidx=bidx%3D1&nodata=65535&resampling_method=nearest&rescale=1277%2C11095&return_mask=true&colormap_name=autumn"
+      ]
+  },
+  "legend": {
+      "type": "gradient",
+      "min": "1277",
+      "max": "11095",
+      "stops": [
+        "#ff0000",
+        "#ff4000",
+        "#ff8000",
+        "#ffbf00",
+        "#ffff00"
+      ]
+  },
+  "info": "TEST Fire Temp K"
+}
